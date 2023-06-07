@@ -1,4 +1,4 @@
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^lequangminh591.id.vn [NC]
+RewriteCond %{HTTP_HOST} ^lequangminh591\.id.vn [NC]
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://www.lequangminh591.id.vn/$1 [R,L]
