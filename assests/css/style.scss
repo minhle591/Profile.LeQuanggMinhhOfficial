@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Rubik', sans-serif;
+}
+div.swal2-popup {
+    background-color: #fff !important;
+}
+h2#swal2-title {
+    color: #2a242497 !important;
+}
+div#swal2-html-container {
+    color: #2a2424 !important;
+    font-size: larger;
+}
+button.swal2-confirm {
+    background-color: rgb(196, 77, 114) !important;
+    &:focus {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        filter: brightness(130%);
+    }
+    &:active {
+        border: none;
+        outline: none;
+        opacity: 0.7;
+    }
+}
+.bg-body{
+    font-family: 'Rubik', sans-serif;
+    .container-body {
+        position: relative;
+       @media (min-width: 1440px) {
+        background-image: url(../images/hand-painted-watercolor-background-with-sky-clouds-shape.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+           padding: 7vh 10vw;
+           min-height: 100vh;
+       }
+       .address-input-section {
+           background-image: url(../images/pattern-bg-desktop.png);
+           background-repeat: no-repeat;
+           background-size: cover;
+           height: 40%;
+           min-height: 250px;
+           @media (min-width: 1440px) {
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+        }
+        .web-title {
+            text-align: center;
+            padding: 1.5rem;
+            margin-bottom: 0;
+            color: #fff;
+        }
+        .ip-form {
+            display: flex;
+            justify-content: center;
+            .ip-input {
+                padding: 14px;
+                width: min(80%, 25rem);
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border: none;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .input-btn {
+                background-color: #000;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border: none;
+                width: 2.5rem;
+                img {
+                    display: block;
+                    margin: auto;
+                }
+            }
+        }
+        }
+        .data-list-section {
+            .row {
+                max-width: 80%;
+                width: 80%;
+                margin: 0 auto;
+                background-color: white;
+                border-radius: 1rem;
+                position: absolute;
+                z-index: 2;
+                box-shadow: 1px 2px 15px #808080;
+                top: 25%;
+                left: 10%;
+                min-height: 7rem;
+                @media (min-width: 1440px) {
+                    width: 70%;
+                    top: 26%;
+                    left: 15%;   
+                }
+                .data-section {
+                    border-right: 1px solid #808080c7;
+                    &:nth-child(n + 4) {
+                        border-right: none;
+                    }
+                    @media (max-width: 991.98px) {
+                        &:nth-child(2n) {
+                            border-right: none;
+                        }
+                    }
+                    @media (max-width: 576.98px) {
+                       border: none;
+                    }
+                    .title-data {
+                        text-transform: uppercase;
+                        font-size: clamp(0.6rem, 0.7vw, 1rem); 
+                        color:  hsl(0, 0%, 59%);
+                        font-weight: 500;
+                        margin-bottom: 3px;
+                        letter-spacing: 2px;
+                    }
+                    .data-ip {
+                      display: block;
+                      font-size: clamp(1rem, 2vw, 1.5rem);
+                      margin-bottom: 10px;
+                      font-weight: 500;
+                    }
+                }
+            }
+           #map {
+           min-height: 550px;
+           z-index: 1;
+           @media (min-width: 1440px) {
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
+        }
+        }
+   }
+}
+}
