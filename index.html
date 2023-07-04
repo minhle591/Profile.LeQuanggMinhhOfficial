@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile: Lê Quangg Minhh</title>
+    <link rel="shortcut icon" href="https://graph.facebook.com/24601345/picture?width=100&height=100&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" type="image/webp">
+    <meta name="description" content="rxtsel&#x27;s biolink" />
+    <meta name="author" content="LQM" />
+    <meta name="twitter:title" content="LQM" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="LQM" />
+    <meta name="twitter:creator" content="LQM" />
+    <meta property="og:site_name" content="LQM" />
+    <meta name="og:title" content="LQM" />
+    <meta property="og:type" content="website" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-color: #1d1d1d;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px; /* Đảm bảo không bị che phủ bởi footer */
+}
+
+body {
+  background-color: var(--bg-color);
+  background: url(https://i.pinimg.com/originals/50/fd/06/50fd062c1e4cc26bd927eb4977eddcd9.gif) no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  min-height: calc(100vh - 15.4rem);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 40px; /* Đảm bảo không bị che khuất bởi phần tử khác */
+}
+
+.title {
+  text-align: center;
+  font-size: 1.4rem;
+  display: inline-block;
+  background: #000;
+  border-radius: 2.5rem;
+  margin-top: 1.5rem;
+  padding: .2rem 1rem;
+  border: 1px solid #f5f5f5;
+  font-weight: 400;
+}
+#copyright {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color:#000000;
+}
+#container {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.header > img {
+  width: 14rem;
+  border: 1px solid #f5f5f5;
+  border-radius: 100%;
+  max-width: 100%;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .header > img {
+    width: 12rem;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 3.2rem;
+  margin: 0 auto;
+  width: 48rem;
+  min-width: 90%;
+}
+
+@media (max-width: 768px) {
+  ul {
+    margin: 0 auto;
+    width: 100vw;
+    max-width: 50rem;
+  }
+}
+
+ul > li {
+  background-color: rgba(255, 255, 255, 0.34);
+  margin: 1.5rem 0;
+  backdrop-filter: blur(10px) saturate(160%) contrast(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(180%);
+  border-radius: 16rem;
+}
+
+ul > li > a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  font-size: 1.8rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+#vanta {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  margin: 0 auto;
+}
+
+main.animated {
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 2s ease-in-out, filter 2s ease-in-out;
+}
+
+p {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  p {
+    display: none;
+  }
+}
+
+
+</style>
+
+
+<body>
+<!--Chống Ctrl+U, F12, Ctrl+S, Ctrl+Shift+I, Ctrl+Shift+C -->
+<script type='text/javascript'>
+shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!1,disable_in_input:!1,target:document,keycode:!1};if(c)for(var e in d)"undefined"==typeof c[e]&&(c[e]=d[e]);else c=d;d=c.target,"string"==typeof c.target&&(d=document.getElementById(c.target)),a=a.toLowerCase(),e=function(d){d=d||window.event;if(c.disable_in_input){var e;d.target?e=d.target:d.srcElement&&(e=d.srcElement),3==e.nodeType&&(e=e.parentNode);if("INPUT"==e.tagName||"TEXTAREA"==e.tagName)return}d.keyCode?code=d.keyCode:d.which&&(code=d.which),e=String.fromCharCode(code).toLowerCase(),188==code&&(e=","),190==code&&(e=".");var f=a.split("+"),g=0,h={"`":"~",1:"!",2:"@",3:"#",4:"$",5:"%",6:"^",7:"&",8:"*",9:"(",0:")","-":"_","=":"+",";":":","'":'"',",":"<",".":">","/":"?","\\":"|"},i={esc:27,escape:27,tab:9,space:32,"return":13,enter:13,backspace:8,scrolllock:145,scroll_lock:145,scroll:145,capslock:20,caps_lock:20,caps:20,numlock:144,num_lock:144,num:144,pause:19,"break":19,insert:45,home:36,"delete":46,end:35,pageup:33,page_up:33,pu:33,pagedown:34,page_down:34,pd:34,left:37,up:38,right:39,down:40,f1:112,f2:113,f3:114,f4:115,f5:116,f6:117,f7:118,f8:119,f9:120,f10:121,f11:122,f12:123},j=!1,l=!1,m=!1,n=!1,o=!1,p=!1,q=!1,r=!1;d.ctrlKey&&(n=!0),d.shiftKey&&(l=!0),d.altKey&&(p=!0),d.metaKey&&(r=!0);for(var s=0;k=f[s],s<f.length;s++)"ctrl"==k||"control"==k?(g++,m=!0):"shift"==k?(g++,j=!0):"alt"==k?(g++,o=!0):"meta"==k?(g++,q=!0):1<k.length?i[k]==code&&g++:c.keycode?c.keycode==code&&g++:e==k?g++:h[e]&&d.shiftKey&&(e=h[e],e==k&&g++);if(g==f.length&&n==m&&l==j&&p==o&&r==q&&(b(d),!c.propagate))return d.cancelBubble=!0,d.returnValue=!1,d.stopPropagation&&(d.stopPropagation(),d.preventDefault()),!1},this.all_shortcuts[a]={callback:e,target:d,event:c.type},d.addEventListener?d.addEventListener(c.type,e,!1):d.attachEvent?d.attachEvent("on"+c.type,e):d["on"+c.type]=e},remove:function(a){var a=a.toLowerCase(),b=this.all_shortcuts[a];delete this.all_shortcuts[a];if(b){var a=b.event,c=b.target,b=b.callback;c.detachEvent?c.detachEvent("on"+a,b):c.removeEventListener?c.removeEventListener(a,b,!1):c["on"+a]=!1}}},shortcut.add("Ctrl+U",function(){top.location.href="https://www.youtube.com/lequanggminhhofficial"}),shortcut.add("F12",function(){top.location.href="https://www.youtube.com/lequanggminhhofficial"}),shortcut.add("Ctrl+Shift+I",function(){top.location.href="https://www.youtube.com/lequanggminhhofficial"}),shortcut.add("Ctrl+S",function(){top.location.href="https://www.youtube.com/lequanggminhhofficial"}),shortcut.add("Ctrl+Shift+C",function(){top.location.href="https://www.youtube.com/lequanggminhhofficial"});
+</script>
+<script type="text/javascript">
+  document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey || event.key === 'F12' || (event.ctrlKey && event.key === 's') || (event.ctrlKey && event.key === 'u') ||
+        (event.ctrlKey && event.shiftKey && event.key === 'I') || (event.ctrlKey && event.shiftKey && event.key === 'C')) {
+      event.preventDefault();
+      window.close();
+    }
+  });
+
+
+</script>
+</div>
+    <style>
+  @import url(https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap);
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 9998;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+
+  #rectangleText {
+    color: #000000; /* Mã màu đen */
+    text-align: center;
+    bottom: auto;
+  }
+  h1 {
+    font-size: 23px !important;
+    font-family: 'Dancing Script', cursive;
+
+  }
+p {
+font-family: 'Dancing Script', cursive;
+font-size: 20px;
+}
+
+      .rectangle {
+        width: 800px;
+        height: 200px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: showRectangle 0.5s ease forwards;
+      }
+
+      @keyframes showRectangle {
+        0% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+
+
+  </head>
+    <script>
+      swal('Chào mừng bạn đến với website của Lê Quang Minh','Youtube: Lê Quangg Minhh Official','success')
+    </script>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        VANTA.BIRDS({
+          el: "#vanta",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: true,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          backgroundAlpha: 0.0,
+          color1: 0xc8b6ff,
+          wingSpan: 40.0,
+          separation: 100.0,
+          alignment: 77.0,
+          cohesion: 5.0,
+          quantity: 1.0,
+        });
+
+        setTimeout(() => {
+          const main = document.querySelector("main");
+          main.style.opacity = 1;
+          main.style.filter = "blur(0px)";
+        }, 700);
+      });
+    </script>
+
+    <div id="vanta"></div>
+    <main class="animated">
+      <header class="header">
+        <img src="https://graph.facebook.com/24601345/picture?width=100&height=100&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" alt="avatar" />
+        <h1 class="title">Lê Quangg Minhh Official</h1>
+      </header>
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/Tricker.LQM">
+            <img src="https://th.bing.com/th/id/R.f7f00a16e4cb10617e3c950c7ee96b97?rik=IgLfouWYM6RBwA&pid=ImgRaw&r=0" alt="Facebook" style="width: 30px; height: 30px;" />
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/_le.quang.minh.1908_">
+            <img src="https://freepngimg.com/download/logo/69823-instagram-icons-symbol-youtube-computer-logo.png" alt="Instagram" style="width: 30px; height: 30px;" />
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="thongtinthanhtoan.html">
+            <img src="https://th.bing.com/th/id/R.c3f62e61e9556da244af63d5327aaa9b?rik=gi4ADoT4gKqmvw&pid=ImgRaw&r=0" alt="Thông Tin Thanh Toán" style="width: 30px; height: 30px;" />
+            Thông Tin Thanh Toán
+          </a>
+        </li>
+        <li>
+          <a href="web_key.html">
+            <img src="https://www.freepngimg.com/download/light/69325-color-light-ring-effect-png-free-photo.png" alt="Web Lấy Key Link1s" style="width: 30px; height: 30px;" />
+            Web Lấy Key Link1s
+          </a>
+        <li>
+          <a href="Caption.html">
+            <img src="https://i.pinimg.com/originals/01/e4/96/01e496a4213686004776c3f102946b2f.gif" alt="Caption thả thính" style="width: 30px; height: 30px;" />
+            Caption thả thính
+          </a>
+        </li>
+        <li>
+          <a href="getuidfacebook.html">
+            <img src="https://th.bing.com/th/id/R.91082b3d67a0f5e2052e2cfb77576f5a?rik=pBmj6NjLXxLBFg&pid=ImgRaw&r=0" alt="Website Get UID Facebook" style="width: 30px; height: 30px;" />
+            Website Get UID Facebook
+          </a>
+        </li>
+        <li>
+          <a href="Language_Translator.html">
+            <img src="https://icon-library.com/images/google-translate-icon/google-translate-icon-28.jpg" alt="Language Translator" style="width: 30px; height: 30px;" />
+            Language Translator
+          </a>
+        </li>
+        <li>
+          <a href="IP_Address_Tracker.html">
+            <img src="https://cdn.icon-icons.com/icons2/3413/PNG/512/address_ip_icon_217587.png" alt="IP Address Tracker" style="width: 30px; height: 30px;" />
+            IP Address Tracker
+          </a>
+        </li>
+        <li>
+          <a href="my-user-agent.html">
+            <img src="https://cdn130.picsart.com/237922503044212.png" alt="My User Agent" style="width: 30px; height: 30px;" />
+            My User Agent
+          </a>
+        </li>
+        <li>
+          <a href="HTML_encoding.html">
+            <img src="https://static.fjcdn.com/gifs/Cool+loading+gif+i+really+liked+this+loading+gif+so_7534dd_5444640.gif" alt="HTML Encoding Tool" style="width: 30px; height: 30px;" />
+            HTML Encoding Tool
+          </a>
+        </li>
+        <li>
+          <a href="fake_message.html">
+            <img src="https://www.intelligentvc.co.uk/wp-content/uploads/2015/11/animated-email.gif" alt="Website Fake Message" style="width: 30px; height: 30px;" />
+            Website Fake Message
+          </a>
+        </li>
+        <li>
+          <a href="dowload_tiktok.html">
+            <img src="https://www.gifmaniacos.es/wp-content/uploads/2021/03/gifmaniacos.es-14-1.gif" alt="Tiktok Video Download" style="width: 30px; height: 30px;" />
+            Tiktok Video Download
+          </a>
+        </li>
+        <li>
+          <a href="https://www.spamcallsms.click">
+            <img src="https://dgreenhome.com/wp-content/uploads/2021/02/call-icon.gif" alt="Website Spam Call SMS" style="width: 30px; height: 30px;" />
+            Website Spam Call SMS
+          </a>
+        </li>
+        </li>
+      </ul>
+    </main>
+    <p class="footer">Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script><a href="https://zalo.me/lequangminhofficial" target="_blank"> Lê Quang Minh</a>. All Rights Reserved <br>Anti DDoS By <a href="https://zalo.me/lequangminhofficial">Lê Quang Minh</div>
+          <div id="current-time"></div></p>
+
+
+</svg>
+
+<script>
+              function LeQuangMinhStart() {
+        audio.play();
+      }
+      const LeQuangMinh_List = [
+  "https://cdn.glitch.me/98208711-96c5-4189-9964-97a74cc25c36/videoplayback.mp4?v=1688025219169",
+
+];
+//Random music
+let index = Math.floor(Math.random() * LeQuangMinh_List.length);
+const audio = new Audio(LeQuangMinh_List[index]);
+function LeQuangMinhAudio() {
+  audio.play();
+}
+document.addEventListener("click", LeQuangMinhAudio);
+audio.addEventListener("ended", function() {
+  index = (index + 1) % LeQuangMinh_List.length;
+  audio.src = LeQuangMinh_List[index];
+  audio.play();
+});
+  </script>
+
+<!--Chống Chuột Phải -->
+<script type='text/javascript'>
+    var message = "NoRightClicking";
+    function defeatIE() {
+        if (document.all) {
+            (message);
+            return false;
+        }
+    }
+    function setText(text) {
+  document.getElementById('md5_value').innerText = text;
+}
+
+    function generateMd5() {
+      if (!window.DisableDevtool) {
+        alert('DisableDevtool not ready');
+        return;
+      }
+      let key = document.getElementById('md5_key').value;
+      if (!key) {
+        alert('Key is empty');
+        return;
+      }
+      setText(DisableDevtool.md5(key));
+    }
+
+    function defeatNS(e) {
+        if (document.layers || (document.getElementById && !document.all)) {
+            if (e.which == 2 || e.which == 3) {
+                (message);
+                return false;
+            }
+        }
+    }
+    if (document.layers) {
+        document.captureEvents(Event.MOUSEDOWN);
+        document.onmousedown = defeatNS;
+    } else {
+        document.onmouseup = defeatNS;
+        document.oncontextmenu = defeatIE;
+    }
+    document.oncontextmenu = new Function("return false")
+
+
+</script>
+    <script type="text/javascript">
+        var _paq = window._paq = window._paq || [];
+        _paq.push(["setCookieDomain", "*.bio.link"]);
+        _paq.push(["setDomains", ["*.bio.link"]]);
+        _paq.push(['trackPageView']);
+        (function () {
+            let u = "https://analytics.bio.link/";
+            _paq.push(['setTrackerUrl', u + 'matomo.php']);
+            _paq.push(['setSiteId', '74645']);
+            let d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.src = 'https://cdn.bio.link/matomo.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+
+  </body>
+
+</html>
