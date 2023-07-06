@@ -1,2 +1,2 @@
-# lequangminh591.id.vn
-# Mày có biết bố mày là ai không ???
+# Ký Ức Luôn Xứng Đáng Được Trân Trọng, Không Phải Vì Nó Vui Hay Buồn, Mà Bởi Vì Nó Là Thứ Duy Nhất Không Bao Giờ Quay Trở Lại...
+# _____Lê Quangg Minhh Official_____
