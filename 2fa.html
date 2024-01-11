@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta property="og:title" content="Lấy Code 2FA - Lưu Text Online" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="Lay2fa.Com" />
+    <meta property="og:image" content="https://lay2fa.com/images/2facover.jpg?v=3" />
+    <meta property="og:image:alt" content="Lấy Code 2FA - Lưu Text Online" />
+    <meta property="og:description" content="Lấy Code 2FA - Lưu Text Online" />
+    <meta name="google-signin-client_id" content="">
+    <link rel="canonical" href="https://lay2fa.com">
+    <link rel="alternate" href="https://lay2fa.com/en" hreflang="en-us" />
+    <link rel="alternate" href="https://lay2fa.com/vi" hreflang="vi-vn" />
+    <title>2FA Auth - Lấy mã từ 2FA | Lấy Code 2FA - Lưu Text Online</title>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="/assets/images/logo/favicon.png?v=3">
+ 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+ 
+    <!-- Other Css -->
+    <link href="http://lay2fa.com/plugins/toastr/toastr.min.css?v=3" rel="stylesheet" type="text/css" />
+    <link href="http://lay2fa.com/assets/vendors/select2/select2.css?v=3" rel="stylesheet" type="text/css" />
+ 
+    <link href="http://lay2fa.com/assets/css/app.min.css?v=3" media="all" type="text/css" rel="stylesheet" />
+    <link href="http://lay2fa.com/css/custom-style.css?v=3" rel="stylesheet" type="text/css" />
+    <link href="http://lay2fa.com/css/landing.css?v=3" rel="stylesheet" type="text/css" />
+ 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="19FHTPhTbUVHTg95bh9koXY8AwtbscdpByHAd8bj">
+ 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8W6M18WFZ9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+ 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+ 
+        gtag('config', 'G-8W6M18WFZ9');
+    </script>
+    <section class="page-container">
+        <div class="main-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Lấy Code từ KEY 2FA</h5>
+                            </div>
+                            <form id="form_secret" class="mt-4" onsubmit="return false;">
+                                <div class="form-group">
+                                    <label for="SECRET2FA">KEY 2FA</label>
+                                    <textarea id="SECRET2FA" name="SECRET2FA" rows="6" class="form-control" placeholder="Nhập Key Ví Dụ:... 
+L2WA M4BZ RBM2 YVJP ..."></textarea>
+                                    <span class="form-text text-muted">
+                                        Chỉ Cần Dán Mã 2FA Hệ Thống Sẽ Tự Dộng Lấy Code Cho Bạn
+                                    </span>
+                                </div>
+                                <span class="form-text text-muted">
+                                    Có thể nhập Full định dạng ID | Pass | 2FA. Mỗi dòng sẽ lấy 1 code.
+                                </span>
+                        </div>
+ 
+                        <hr>
+ 
+                        <div id="toggle-2fa-list">
+                             <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="m-b-20">Thông tin từ KEY 2FA</h5>
+                    </div>
+ 
+                    <div class="form-row key2fa">
+                        <div class="form-group col-md-2">
+                            <label>Mã Code</label>
+                            <div class="input-group mb-3">
+                                <input class="form-control faotp" placeholder="Mã Code" value="222555">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-success btn-tone btn-nw" type="button">
+                                        <i class="anticon anticon-key"></i>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="form-group col-md-2 text-center">
+                            <label>Thời gian</label>
+                            <div class="m-t-10 time2fa">
+                                <i class="anticon anticon-clock-circle"></i>
+                                30
+                            </div>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label>Thông tin KEY</label>
+                            <input type="text" class="form-control" placeholder="Thông tin KEY....">
+                        </div>
+                    </div>
+                    <div class="form-row key2fa">
+                        <div class="form-group col-md-2">
+                            <div class="input-group mb-3">
+                                <input class="form-control faotp" placeholder="Mã Code" value="658998">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-success btn-tone btn-nw" type="button">
+                                        <i class="anticon anticon-key"></i>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="form-group col-md-2 text-center">
+                            <div class="m-t-10 time2fa">
+                                <i class="anticon anticon-clock-circle"></i> 20
+                            </div>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <input type="text" class="form-control" placeholder="Thông tin KEY....">
+                        </div>
+                    </div>
+                    <div class="form-row key2fa">
+                        <div class="form-group col-md-2">
+                            <div class="input-group mb-3">
+                                <input class="form-control faotp" placeholder="Mã Code" value="419998">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-success btn-tone btn-nw" type="button">
+                                        <i class="anticon anticon-key"></i>Copy</button>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="form-group col-md-2 text-center">
+                            <div class="m-t-10 time2fa">
+                                <i class="anticon anticon-clock-circle"></i> 25
+                            </div>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <input type="text" class="form-control" placeholder="Thông tin KEY....">
+                        </div>
+                    </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    </div>
+    </div>
+ 
+ 
+    <script>
+        var app_url = 'https://lay2fa.com';
+ 
+        // Contain datatable instance
+        var datatable;
+ 
+        setInterval(function() {
+            var f = new Function('', 'debugger;');
+            f();
+        }, 0);
+    </script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <!-- Core Vendors JS -->
+    <script src="http://lay2fa.com/js/new_theme/vendors.min.js?v=3"></script>
+    <!-- Core JS -->
+    <script src="http://lay2fa.com/js/new_theme/app.min.js?v=3"></script>
+ 
+    <!-- Other JS plugins -->
+    <script src="http://lay2fa.com/plugins/toastr/toastr.min.js?v=3"></script>
+    <script src="http://lay2fa.com/plugins/sweetalert/sweetalert.min.js?v=3"></script>
+    <script src="http://lay2fa.com/plugins/momentjs/moment.js?v=3"></script>
+    <script src="http://lay2fa.com/plugins/autosize/autosize.min.js?v=3"></script>
+    <script src="http://lay2fa.com/assets/vendors/select2/select2.min.js?v=3"></script>
+ 
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="http://lay2fa.com/js/axios.js?v=3"></script>
+ 
+ 
+    <!--User defined js code -->
+    <script src="http://lay2fa.com/js/common.js?v=3"></script>
+ 
+ 
+    <script src="https://unpkg.com/@otplib/preset-browser@^12.0.0/buffer.js"></script>
+    <script src="https://unpkg.com/@otplib/preset-browser@^12.0.0/index.js"></script>
+    <script src="http://lay2fa.com/js/get-2fa-otp.js?v=3"></script>
+ 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="http://lay2fa.com/js/auth.js?v=3"></script>
+    </body>
+ 
+</html>
+<center>
+    <b><br>
+        <a href="/card">Mua Thẻ</a> | <a href="https://t.m/spwebsitee" rel="nofollow" target="_blank">Liên hệ</a> | <a href="/merchant/list">Kết Nối Api</a> | <a href="/doithecao">Đổi Thẻ </a>
+        </br>
+        <a href="/service/rules">★★★★★</a>
+        <b><br>
+            Copyright © | Version Designed & Developed <a href="https://t.me/spwebsitee" rel="nofollow" target="_blank">Lương Đức Kiệt</a>
+            <center>
+                <br>
