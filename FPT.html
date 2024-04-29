@@ -7017,6 +7017,79 @@ window.addEventListener('keydown', function (event) {
   }
 });
 </script>
+        <script type='text/javascript'>
+            const [currentTime, setCurrentTime] = useState("");
+            const [showDateTime, setShowDateTime] = useState(false);
+
+            useEffect(() => {
+            const intervalId = setInterval(() => {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                const seconds = now.getSeconds().toString().padStart(2, "0");
+
+                setCurrentTime(`${hours}:${minutes}:${seconds}`);
+            }, 1000);
+
+            return () => clearInterval(intervalId);
+            }, []);
+
+            const getVietnamDateTime = () => {
+            const now = new Date();
+            const vietnamDateTime = format(now, "HH:mm:ss - dd.MM.yyyy", {
+                timeZone: "Asia/Ho_Chi_Minh",
+            });
+            return vietnamDateTime;
+            };
+
+            const toggleDateTime = () => {
+            setShowDateTime(!showDateTime);
+            };
+        </script>
+        <script type='text/javascript'>
+            window.ladi_viewport = function(b) {
+                var a = document;
+                b = b ? b : 'innerWidth';
+                var c = window[b];
+                var d = c < 768;
+                if (typeof window.ladi_is_desktop == "undefined" || window.ladi_is_desktop == undefined) {
+                    window.ladi_is_desktop = !d;
+                }
+                var e = 1200;
+                var f = 420;
+                var g = '';
+                if (!d) {
+                    g = "width=" + e + ",user-scalable=no,initial-scale=1.0";
+                } else {
+                    var h = 1;
+                    var i = f;
+                    if (i != c) {
+                        h = c / i;
+                    }
+                    g = "width=" + i + ",user-scalable=no,initial-scale=" + h + ",minimum-scale=" + h + ",maximum-scale=" + h;
+                }
+                var j = a.getElementById("viewport");
+                if (!j) {
+                    j = a.createElement("meta");
+                    j.id = "viewport";
+                    j.name = "viewport";
+                    a.head.appendChild(j);
+                }
+                j.setAttribute("content", g);
+            }
+            ;
+            window.ladi_viewport();
+            window.ladi_fbq_data = [];
+            window.ladi_fbq = function() {
+                window.ladi_fbq_data.push(arguments);
+            }
+            ;
+            window.ladi_ttq_data = [];
+            window.ladi_ttq = function() {
+                window.ladi_ttq_data.push(arguments);
+            }
+            ;
+        </script>
         <center>
             <footer class="space-y-4 pb-8 pt-4">
               <div class="flex flex-col items-center space-y-3">
