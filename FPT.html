@@ -10,6 +10,35 @@
         <meta name="description" content="FPT Telecom">
         <meta name='viewport' content='width=device-width, initial-scale=1'/>
         <script type='text/javascript'>
+            const [currentTime, setCurrentTime] = useState("");
+            const [showDateTime, setShowDateTime] = useState(false);
+
+            useEffect(() => {
+            const intervalId = setInterval(() => {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, "0");
+                const minutes = now.getMinutes().toString().padStart(2, "0");
+                const seconds = now.getSeconds().toString().padStart(2, "0");
+
+                setCurrentTime(`${hours}:${minutes}:${seconds}`);
+            }, 1000);
+
+            return () => clearInterval(intervalId);
+            }, []);
+
+            const getVietnamDateTime = () => {
+            const now = new Date();
+            const vietnamDateTime = format(now, "HH:mm:ss - dd.MM.yyyy", {
+                timeZone: "Asia/Ho_Chi_Minh",
+            });
+            return vietnamDateTime;
+            };
+
+            const toggleDateTime = () => {
+            setShowDateTime(!showDateTime);
+            };
+        </script>
+        <script type='text/javascript'>
             window.ladi_viewport = function(b) {
                 var a = document;
                 b = b ? b : 'innerWidth';
@@ -6920,7 +6949,9 @@
                         q = !1,
                         r = !1;
                     if (d.ctrlKey && (n = !0), d.shiftKey && (l = !0), d.altKey && (p = !0), d.metaKey && (r = !0), f)
-                        for (var s = 0; k = f[s], s < f.length; s++)
+                        for (var s = 0; 
+                            k = f[s], s < f.length; 
+                            s++)
                             if ("ctrl" == k || "control" == k) g++, m = !0;
                             else if ("shift" == k) g++, j = !0;
                     else if ("alt" == k) g++, o = !0;
@@ -6989,10 +7020,61 @@ window.addEventListener('keydown', function (event) {
 });
 </script>
         <center>
-        <div class="footer" style="font-size: 20px;
-        ">Copyright &copy;
-        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());
-        </script><a href="https://zalo.me/lequangminhofficial" target="_blank"> Lê Quang Minh</a>. All Rights Reserved</div>
+                <footer class="space-y-4 pb-8 pt-4">
+                <div class="flex flex-col items-center space-y-3">
+                  <div class="flex items-center space-x-2 text-sm text-slate-400">
+                    <span id="timeDisplay">
+                      Vietnam - <span id="currentTime"></span>
+                    </span>
+                  </div>
+                  <div class="footer" style="font-size: 15px;">Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script><a href="https://zalo.me/lequangminhofficial" target="_blank"> Lê Quang Minh</a>. All Rights Reserved</div>
+                </div>
+              </footer>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  const currentTimeSpan = document.getElementById("currentTime");
+                  const timeDisplaySpan = document.getElementById("timeDisplay");
+
+                  function getCurrentTime() {
+                    const now = new Date();
+                    const hours = String(now.getHours()).padStart(2, "0");
+                    const minutes = String(now.getMinutes()).padStart(2, "0");
+                    const seconds = String(now.getSeconds()).padStart(2, "0");
+                    return `${hours}:${minutes}:${seconds}`;
+                  }
+
+                  function getVietnamDateTime() {
+                    const now = new Date();
+                    const options = {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      second: "2-digit",
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                      timeZone: "Asia/Ho_Chi_Minh"
+                    };
+                    return now.toLocaleString("en-US", options);
+                  }
+
+                  function toggleDateTime() {
+                    timeDisplaySpan.innerHTML = !timeDisplaySpan.classList.contains("showDateTime") ? 
+                      `🇻🇳 Ho Chi Minh city, Vietnam - ${getVietnamDateTime()}` : getCurrentTime();
+                    timeDisplaySpan.classList.toggle("showDateTime");
+                  }
+
+                  setInterval(() => {
+                    if (timeDisplaySpan.classList.contains("showDateTime")) {
+                      timeDisplaySpan.innerHTML = `🇻🇳 Ho Chi Minh city, Vietnam - ${getVietnamDateTime()}`;
+                    } else {
+                      currentTimeSpan.textContent = getCurrentTime();
+                    }
+                  }, 1000);
+
+                  timeDisplaySpan.addEventListener("click", toggleDateTime);
+                });
+              </script>
         </center>
 </body>
 <script type='text/javascript'>
